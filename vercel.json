@@ -1,7 +1,4 @@
 {
   "cleanUrls": true,
-  "trailingSlash": false,
-  "redirects": [
-    { "source": "/", "destination": "/guide-hebrew", "permanent": false }
-  ]
+  "trailingSlash": false
 }
