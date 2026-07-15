@@ -1,5 +1,5 @@
 {
   "redirects": [
-    { "source": "/", "destination": "/haimyankovich_landingpage/index.html", "permanent": false }
+    { "source": "/", "destination": "/guide/guide.html", "permanent": false }
   ]
 }
