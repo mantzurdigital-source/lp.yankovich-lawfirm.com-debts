@@ -40,7 +40,7 @@
       }
 
       // No backend wired up yet — replace with the real submit endpoint when available.
-      window.location.href = 'thanks.html';
+      window.location.href = '/guide-hebrew/thanks';
     });
   }
 

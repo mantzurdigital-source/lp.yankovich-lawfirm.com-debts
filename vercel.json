@@ -1,5 +1,4 @@
 {
-  "redirects": [
-    { "source": "/", "destination": "/guide/guide.html", "permanent": false }
-  ]
+  "cleanUrls": true,
+  "trailingSlash": false
 }
