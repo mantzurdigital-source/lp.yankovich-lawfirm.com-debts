@@ -1,0 +1,5 @@
+{
+  "redirects": [
+    { "source": "/", "destination": "/haimyankovich_landingpage/index.html", "permanent": false }
+  ]
+}
