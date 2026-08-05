@@ -28,6 +28,15 @@
       </div>
     </div>
 
+    <nav class="site-nav" aria-label="ניווט בעמוד">
+      <a href="#paths" class="site-nav__link">השירותים שלנו</a>
+      <a href="#process" class="site-nav__link">התהליך</a>
+      <a href="#why" class="site-nav__link">למה אנחנו</a>
+      <a href="#testimonials" class="site-nav__link">לקוחות ממליצים</a>
+      <a href="#faq" class="site-nav__link">שאלות נפוצות</a>
+      <a href="#contact" class="site-nav__link site-nav__link--cta">צור קשר</a>
+    </nav>
+
     <a href="tel:097663381" class="header-contact">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3-8.7A2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 2 .7 3a2 2 0 0 1-.5 2.1L8 10a16 16 0 0 0 6 6l1.2-1.3a2 2 0 0 1 2.1-.5c1 .3 2 .5 3 .7a2 2 0 0 1 1.7 2z"/></svg>
       <span>09-7663381</span>
@@ -42,29 +51,26 @@
       <div class="hero__body">
         <span class="hero-kicker">מעל 25 שנות ניסיון משפטי</span>
         <h1 class="hero__title">
-          <span class="hero-title__line hero-title__line--1">יוצאים <span class="hero-title__accent">מהחוב</span></span>
-          <span class="hero-title__line hero-title__line--2">בדרך הנכונה עבורכם</span>
+          <span class="hero-title__line hero-title__line--1">מאחורי כל <span class="hero-title__accent">חוב</span></span>
+          <span class="hero-title__line hero-title__line--1">יש סיפור.</span>
+          <span class="hero-title__line hero-title__line--2">אנחנו כאן לדאוג שהוא יסתיים אחרת</span>
         </h1>
-        <p class="hero__sub">לכל מצב כלכלי יש יותר ממסלול אחד לפתרון. נבין יחד, בשיחה אישית ודיסקרטית, איזה מהם מתאים למצב שלכם.</p>
+        <p class="hero__sub">לאורך יותר מ־25 שנות ניסיון, ליווינו מגוון רחב של מצבי חוב. הידע והניסיון שצברנו מאפשרים לנו להתאים עבורכם את הדרך הנכונה — כדי שהתהליך יהיה ברור, פשוט ונכון יותר עבורכם.</p>
 
-        <div class="hero__features">
-          <div class="hf-item">
-            <div class="hf-item__ico">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l7 3v6c0 4.5-3 7.5-7 9-4-1.5-7-4.5-7-9V6l7-3z"/></svg>
-            </div>
-            <p class="hf-item__text">דיסקרטיות<br>מלאה</p>
+        <div class="hero__stats">
+          <div class="hstat reveal">
+            <span class="hstat__num" data-count="25" data-suffix="+">0</span>
+            <span class="hstat__label">שנות ניסיון</span>
           </div>
-          <div class="hf-item">
-            <div class="hf-item__ico">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12l4-4 4 3 3-3 4 4"/><path d="M9 11l3 3 3-3 3 3-2 2"/></svg>
-            </div>
-            <p class="hf-item__text">ליווי אישי<br>לכל אורך הדרך</p>
+          <div class="hstat-divider" aria-hidden="true"></div>
+          <div class="hstat reveal">
+            <span class="hstat__num" data-count="750" data-suffix="+">0</span>
+            <span class="hstat__label">תיקי הוצאה לפועל</span>
           </div>
-          <div class="hf-item">
-            <div class="hf-item__ico">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg>
-            </div>
-            <p class="hf-item__text">מענה מהיר<br>ואישי</p>
+          <div class="hstat-divider" aria-hidden="true"></div>
+          <div class="hstat reveal">
+            <span class="hstat__num" data-count="8" data-suffix="+">0</span>
+            <span class="hstat__label">עורכי דין במשרד</span>
           </div>
         </div>
 
@@ -81,7 +87,9 @@
       </div>
 
       <div class="hero__photo">
-        <img src="assets/images/attorney-hero.jpg" alt="עו&quot;ד חיים ינקוביץ'" loading="eager" fetchpriority="high" />
+        <div class="hero__photo-frame">
+          <img src="assets/images/attorney-hero.jpg" alt="עו&quot;ד חיים ינקוביץ'" loading="eager" fetchpriority="high" />
+        </div>
       </div>
     </div>
   </section>
@@ -116,31 +124,108 @@
   </section>
 
   <!-- ══════════════════════════════════════════════════
-       THREE PATHS — core differentiator
+       SIX PATHS — core differentiator
   ══════════════════════════════════════════════════ -->
   <section class="paths" id="paths">
     <div class="wrap">
-      <a href="https://lp.yankovich-lawfirm.com/guide-hebrew" class="section-kicker section-kicker--link reveal">המדריך המלא לחייב</a>
-      <h2 class="paths__title reveal">שלושה מסלולים אפשריים לפתרון</h2>
-      <p class="paths__sub reveal">לכל מסלול יתרונות שונים, בהתאם למצב הכלכלי הספציפי שלכם. בשיחת הייעוץ נבחן יחד מה מתאים לכם.</p>
+      <h2 class="paths__title reveal">השירותים שלנו</h2>
+      <p class="paths__sub reveal">מגוון הפתרונות המשפטיים שאנחנו מציעים — מהפשוטים והנפוצים ביותר ועד ההליכים המורכבים יותר, בהתאם למצב הכלכלי הספציפי שלכם. בשיחת הייעוץ נבחן יחד מה מתאים לכם.</p>
 
-      <div class="path-preview__grid">
-        <div class="path-preview reveal">
-          <div class="path-preview__ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/><path d="M3 12h18"/></svg></div>
-          <p>צו תשלומים</p>
-        </div>
-        <div class="path-preview reveal">
-          <div class="path-preview__ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M8 12h.01M12 12h.01M16 12h.01M21 12a9 9 0 1 1-4.2-7.6L21 3l-1 4.6A8.96 8.96 0 0 1 21 12z"/></svg></div>
-          <p>הסדר חוב</p>
-        </div>
-        <div class="path-preview reveal">
-          <div class="path-preview__ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l8 4v5c0 5-3.4 8.4-8 9.5C7.4 20.4 4 17 4 12V7l8-4z"/><path d="M9 12l2 2 4-4"/></svg></div>
-          <p>חדלות פירעון</p>
-        </div>
-      </div>
+      <ul class="path-preview__grid" role="list">
+        <li class="path-preview reveal">
+          <button type="button" class="path-card" data-flip aria-expanded="false" aria-controls="pcPath1">
+            <span class="path-card__inner">
+              <span class="path-card__cover">
+                <span class="path-card__ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M8 12h.01M12 12h.01M16 12h.01M21 12a9 9 0 1 1-4.2-7.6L21 3l-1 4.6A8.96 8.96 0 0 1 21 12z"/></svg></span>
+                <span class="path-card__title">הסדר חובות</span>
+                <span class="path-card__hint">לחצו לפרטים</span>
+              </span>
+              <span class="path-card__back" id="pcPath1">
+                <span class="path-card__back-title">הסדר חובות</span>
+                <p class="path-card__back-desc">פריסה והפחתת החוב באמצעות משא ומתן ישיר מול הנושים.</p>
+              </span>
+            </span>
+          </button>
+        </li>
+        <li class="path-preview reveal">
+          <button type="button" class="path-card" data-flip aria-expanded="false" aria-controls="pcPath2">
+            <span class="path-card__inner">
+              <span class="path-card__cover">
+                <span class="path-card__ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="10" rx="2"/><path d="M7 11V7a5 5 0 0 1 9.9-1"/></svg></span>
+                <span class="path-card__title">ביטול עיקולים והגבלות</span>
+                <span class="path-card__hint">לחצו לפרטים</span>
+              </span>
+              <span class="path-card__back" id="pcPath2">
+                <span class="path-card__back-title">ביטול עיקולים והגבלות</span>
+                <p class="path-card__back-desc">כולל עיכוב יציאה מהארץ והסרת הגבלות נוספות שהוטלו עליכם.</p>
+              </span>
+            </span>
+          </button>
+        </li>
+        <li class="path-preview reveal">
+          <button type="button" class="path-card" data-flip aria-expanded="false" aria-controls="pcPath3">
+            <span class="path-card__inner">
+              <span class="path-card__cover">
+                <span class="path-card__ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="4" width="4" height="16" rx="1"/><rect x="14" y="4" width="4" height="16" rx="1"/></svg></span>
+                <span class="path-card__title">עיכוב הליכים מיידי</span>
+                <span class="path-card__hint">לחצו לפרטים</span>
+              </span>
+              <span class="path-card__back" id="pcPath3">
+                <span class="path-card__back-title">עיכוב הליכים מיידי</span>
+                <p class="path-card__back-desc">עצירה מהירה של הליכי הגבייה במסגרת תיקון 9 לחוק.</p>
+              </span>
+            </span>
+          </button>
+        </li>
+        <li class="path-preview reveal">
+          <button type="button" class="path-card" data-flip aria-expanded="false" aria-controls="pcPath4">
+            <span class="path-card__inner">
+              <span class="path-card__cover">
+                <span class="path-card__ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l8 4v5c0 5-3.4 8.4-8 9.5C7.4 20.4 4 17 4 12V7l8-4z"/><path d="M9 12l2 2 4-4"/></svg></span>
+                <span class="path-card__title">הפטר חובות</span>
+                <span class="path-card__hint">לחצו לפרטים</span>
+              </span>
+              <span class="path-card__back" id="pcPath4">
+                <span class="path-card__back-title">הפטר חובות</span>
+                <p class="path-card__back-desc">סיום משפטי של החוב והתחלה כלכלית חדשה, בהתאם לנסיבות האישיות.</p>
+              </span>
+            </span>
+          </button>
+        </li>
+        <li class="path-preview reveal">
+          <button type="button" class="path-card" data-flip aria-expanded="false" aria-controls="pcPath5">
+            <span class="path-card__inner">
+              <span class="path-card__cover">
+                <span class="path-card__ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg></span>
+                <span class="path-card__title">צו תשלומים</span>
+                <span class="path-card__hint">לחצו לפרטים</span>
+              </span>
+              <span class="path-card__back" id="pcPath5">
+                <span class="path-card__back-title">צו תשלומים</span>
+                <p class="path-card__back-desc">החזר חוב מסודר בתשלומים חודשיים, בהתאם ליכולת הכלכלית שלכם.</p>
+              </span>
+            </span>
+          </button>
+        </li>
+        <li class="path-preview reveal">
+          <button type="button" class="path-card" data-flip aria-expanded="false" aria-controls="pcPath6">
+            <span class="path-card__inner">
+              <span class="path-card__cover">
+                <span class="path-card__ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/><path d="M3 12h18"/></svg></span>
+                <span class="path-card__title">ליווי עסקים ועצמאים</span>
+                <span class="path-card__hint">לחצו לפרטים</span>
+              </span>
+              <span class="path-card__back" id="pcPath6">
+                <span class="path-card__back-title">ליווי עסקים ועצמאים</span>
+                <p class="path-card__back-desc">הבראה עסקית והמשך הפעילות השוטפת תוך כדי ההליך המשפטי.</p>
+              </span>
+            </span>
+          </button>
+        </li>
+      </ul>
 
       <div class="paths__cta reveal">
-        <p>לא בטוחים איזה מסלול מתאים לכם?</p>
+        <p>רוצים לדעת מה הפתרון המתאים לכם?</p>
         <a href="#contact" class="btn btn--primary">
           <span>זו בדיוק הסיבה לשיחת ייעוץ ראשונית</span>
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 6l-6 6 6 6"/></svg>
@@ -150,30 +235,131 @@
   </section>
 
   <!-- ══════════════════════════════════════════════════
-       AUTHORITY / ABOUT
+       PROCESS — timeline so the client knows what happens next
   ══════════════════════════════════════════════════ -->
-  <section class="authority">
-    <div class="wrap authority__wrap">
-      <div class="authority__photo reveal">
-        <img src="assets/images/attorney-office.jpg" alt="עו&quot;ד חיים ינקוביץ' במשרדו" loading="lazy" />
+  <section class="process" id="process">
+    <div class="wrap">
+      <span class="section-kicker reveal">איך זה עובד</span>
+      <h2 class="process__title reveal">מהפנייה הראשונה ועד לפתרון</h2>
+      <p class="process__sub reveal">תהליך ברור, בליווי צמוד, בלי הפתעות — כדי שתדעו בכל שלב איפה אתם עומדים ומה קורה הלאה.</p>
+
+      <ol class="process__timeline">
+        <li class="process__step reveal">
+          <div class="process__marker"><span>01</span></div>
+          <div class="process__content">
+            <span class="process__time">היום</span>
+            <h3 class="process__step-title">שיחת ייעוץ ראשונית</h3>
+            <p class="process__step-desc">ממפים את החובות ואת המצב שלכם, בלי לחץ ובלי התחייבות.</p>
+          </div>
+        </li>
+        <li class="process__step reveal">
+          <div class="process__marker"><span>02</span></div>
+          <div class="process__content">
+            <span class="process__time">תוך ימים</span>
+            <h3 class="process__step-title">עוצרים את הלחץ המיידי</h3>
+            <p class="process__step-desc">בקשות דחופות לביטול עיקולים ולעיכוב הליכים, כדי לקנות לכם אוויר.</p>
+          </div>
+        </li>
+        <li class="process__step reveal">
+          <div class="process__marker"><span>03</span></div>
+          <div class="process__content">
+            <span class="process__time">בשבועות הראשונים</span>
+            <h3 class="process__step-title">בוחרים ובונים את המסלול</h3>
+            <p class="process__step-desc">מתאימים לכם את המסלול הנכון מתוך האפשרויות, ומגישים אותו בפועל.</p>
+          </div>
+        </li>
+        <li class="process__step reveal">
+          <div class="process__marker"><span>04</span></div>
+          <div class="process__content">
+            <span class="process__time">עד לסיום</span>
+            <h3 class="process__step-title">ליווי צמוד עד לפתרון</h3>
+            <p class="process__step-desc">מלווים אתכם עם עדכון שוטף, עד לסגירת התיק וההתחלה החדשה.</p>
+          </div>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════════════
+       WHY US
+  ══════════════════════════════════════════════════ -->
+  <section class="why" id="why">
+    <div class="wrap why__wrap">
+      <span class="section-kicker reveal">למה אנחנו</span>
+      <h2 class="why__title reveal">למה לקוחות בוחרים במשרד שלנו</h2>
+      <p class="why__sub reveal">לא רק ניסיון — גישה אישית ודיסקרטית שמלווה אתכם לכל אורך הדרך.</p>
+      <div class="why__grid">
+        <div class="why-item reveal">
+          <div class="why-item__ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l8 4v5c0 5-3.4 8.4-8 9.5C7.4 20.4 4 17 4 12V7l8-4z"/></svg></div>
+          <p class="why-item__title">מעל 25 שנות ניסיון</p>
+          <p class="why-item__sub">בליווי משפטי-כלכלי</p>
+        </div>
+        <div class="why-item reveal">
+          <div class="why-item__ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="8" cy="8" r="3"/><path d="M2 20c0-3.3 2.7-5.5 6-5.5s6 2.2 6 5.5"/></svg></div>
+          <p class="why-item__title">ליווי אישי</p>
+          <p class="why-item__sub">לא "תיק מספר"</p>
+        </div>
+        <div class="why-item reveal">
+          <div class="why-item__ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="11" width="14" height="9" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg></div>
+          <p class="why-item__title">דיסקרטיות מלאה</p>
+          <p class="why-item__sub">לאורך כל התהליך</p>
+        </div>
+        <div class="why-item reveal">
+          <div class="why-item__ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12l4-4 4 3 3-3 4 4"/><path d="M9 11l3 3 3-3 3 3-2 2"/></svg></div>
+          <p class="why-item__title">הסבר ברור</p>
+          <p class="why-item__sub">של כל האפשרויות שלכם</p>
+        </div>
       </div>
-      <div class="authority__body reveal">
-        <span class="section-kicker">אודות המשרד</span>
-        <h2>עו"ד חיים ינקוביץ'</h2>
-        <p class="authority__lede">מעל 25 שנות ניסיון בליווי משפטי אישי ומסור</p>
-        <p>משרד עורכי דין חיים ינקוביץ' מלווה לקוחות בתהליכים מול ההוצאה לפועל, נושים וגורמים משפטיים נוספים, מתוך גישה אישית, מקצועית ודיסקרטית. המשרד פועל מכפר סבא ומעניק ליווי מלא לאורך כל התהליך — משלב ההבנה הראשונית ועד לפתרון.</p>
-        <div class="authority__stats">
-          <div class="astat">
-            <span class="astat__num">25+</span>
-            <span class="astat__label">שנות ניסיון</span>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════════════
+       TESTIMONIALS — clients in their own words
+  ══════════════════════════════════════════════════ -->
+  <section class="testimonials" id="testimonials">
+    <div class="wrap testimonials__wrap">
+      <span class="section-kicker reveal">לקוחות מספרים</span>
+      <h2 class="testimonials__title reveal">מה הלקוחות שלנו מספרים עלינו</h2>
+      <p class="testimonials__sub reveal">לא רק אנחנו אומרים את זה. כך זה נשמע במילים של לקוחות שליווינו בתהליך מול ההוצאה לפועל.</p>
+
+      <div class="testimonial-grid">
+        <div class="testimonial-card reveal">
+          <button
+            class="testimonial-thumb"
+            type="button"
+            data-video-open
+            data-video-src="assets/video/testimonial-radwan.mp4"
+            data-video-poster="assets/video/testimonial-radwan-poster.jpg"
+            aria-label="הפעל את הסרטון של רדואן, לקוח המשרד">
+            <img src="assets/video/testimonial-radwan-poster.jpg" alt="" loading="lazy" />
+            <span class="testimonial-thumb__play">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+            </span>
+          </button>
+          <div class="testimonial-card__body">
+            <svg class="testimonial-card__quote" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M7.17 6.16C4.7 8.2 3.5 10.9 3.5 13.9c0 3.4 2.3 5.6 5.2 5.6 2.2 0 3.9-1.7 3.9-3.9 0-2-1.5-3.6-3.4-3.6-.4 0-.7.05-1 .15.2-1.9 1.5-3.7 3.3-4.9L7.17 6.16zm10.7 0c-2.47 2.04-3.67 4.74-3.67 7.74 0 3.4 2.3 5.6 5.2 5.6 2.2 0 3.9-1.7 3.9-3.9 0-2-1.5-3.6-3.4-3.6-.4 0-.7.05-1 .15.2-1.9 1.5-3.7 3.3-4.9l-4.33-1.09z"/></svg>
+            <p class="testimonial-card__text">״הגענו למשרדו של חיים, עורך הדין, שעשה לנו אחלה עבודה.״</p>
+            <p class="testimonial-card__name">רדואן <span>· לקוח המשרד</span></p>
           </div>
-          <div class="astat">
-            <span class="astat__num">100%</span>
-            <span class="astat__label">דיסקרטיות</span>
-          </div>
-          <div class="astat">
-            <span class="astat__num">3</span>
-            <span class="astat__label">מסלולי פתרון</span>
+        </div>
+
+        <div class="testimonial-card reveal">
+          <button
+            class="testimonial-thumb"
+            type="button"
+            data-video-open
+            data-video-src="assets/video/testimonial-jobs.mp4"
+            data-video-poster="assets/video/testimonial-jobs-poster.jpg"
+            aria-label="הפעל את הסרטון של ג'ובס, לקוח המשרד">
+            <img src="assets/video/testimonial-jobs-poster.jpg" alt="" loading="lazy" />
+            <span class="testimonial-thumb__play">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+            </span>
+          </button>
+          <div class="testimonial-card__body">
+            <svg class="testimonial-card__quote" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M7.17 6.16C4.7 8.2 3.5 10.9 3.5 13.9c0 3.4 2.3 5.6 5.2 5.6 2.2 0 3.9-1.7 3.9-3.9 0-2-1.5-3.6-3.4-3.6-.4 0-.7.05-1 .15.2-1.9 1.5-3.7 3.3-4.9L7.17 6.16zm10.7 0c-2.47 2.04-3.67 4.74-3.67 7.74 0 3.4 2.3 5.6 5.2 5.6 2.2 0 3.9-1.7 3.9-3.9 0-2-1.5-3.6-3.4-3.6-.4 0-.7.05-1 .15.2-1.9 1.5-3.7 3.3-4.9l-4.33-1.09z"/></svg>
+            <p class="testimonial-card__text">לצפייה בעדות המלאה של ג'ובס, לקוח המשרד.</p>
+            <p class="testimonial-card__name">ג'ובס <span>· לקוח המשרד</span></p>
           </div>
         </div>
       </div>
@@ -181,30 +367,28 @@
   </section>
 
   <!-- ══════════════════════════════════════════════════
-       WHY CHOOSE
+       FAQ
   ══════════════════════════════════════════════════ -->
-  <section class="why">
-    <h2 class="why__title reveal">למה לבחור בעו"ד חיים ינקוביץ'?</h2>
-    <div class="why__grid">
-      <div class="why-item reveal">
-        <div class="why-item__ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l8 4v5c0 5-3.4 8.4-8 9.5C7.4 20.4 4 17 4 12V7l8-4z"/></svg></div>
-        <p class="why-item__title">מעל 25 שנות ניסיון</p>
-        <p class="why-item__sub">בליווי משפטי-כלכלי</p>
-      </div>
-      <div class="why-item reveal">
-        <div class="why-item__ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="8" cy="8" r="3"/><path d="M2 20c0-3.3 2.7-5.5 6-5.5s6 2.2 6 5.5"/></svg></div>
-        <p class="why-item__title">ליווי אישי</p>
-        <p class="why-item__sub">לא "תיק מספר"</p>
-      </div>
-      <div class="why-item reveal">
-        <div class="why-item__ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="11" width="14" height="9" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg></div>
-        <p class="why-item__title">דיסקרטיות מלאה</p>
-        <p class="why-item__sub">לאורך כל התהליך</p>
-      </div>
-      <div class="why-item reveal">
-        <div class="why-item__ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12l4-4 4 3 3-3 4 4"/><path d="M9 11l3 3 3-3 3 3-2 2"/></svg></div>
-        <p class="why-item__title">הסבר ברור</p>
-        <p class="why-item__sub">של כל האפשרויות שלכם</p>
+  <section class="faq" id="faq">
+    <div class="wrap">
+      <h2 class="faq__title reveal">שאלות נפוצות</h2>
+      <div class="faq__list">
+        <details class="faq-item reveal">
+          <summary>מהי הוצאה לפועל וכיצד מתמודדים איתה?</summary>
+          <p>הוצאה לפועל היא הרשות האחראית על גביית חובות בישראל. כשנפתח נגדכם תיק, קיימות מספר דרכי פעולה — ביניהן בקשה לצו תשלומים לפי יכולת ההחזר שלכם. בשיחת ייעוץ נבחן את התיק הספציפי שלכם ואת האפשרויות העומדות בפניכם.</p>
+        </details>
+        <details class="faq-item reveal">
+          <summary>מה ההבדל בין הסדר חוב לבין הליך חדלות פירעון?</summary>
+          <p>הסדר חוב הוא משא ומתן ישיר מול הנושים, ללא צורך בהליך משפטי מלא. הליך חדלות פירעון הוא הליך משפטי מובנה יותר, הפועל מול הממונה ובית המשפט, ושיכול להוביל בסופו — בהתאם לנסיבות האישיות — להפטר מהחוב.</p>
+        </details>
+        <details class="faq-item reveal">
+          <summary>כמה זמן אורך התהליך?</summary>
+          <p>משך הזמן תלוי במסלול שנבחר ובנסיבות האישיות של כל תיק. בשיחת הייעוץ הראשונית נוכל לתת לכם תמונה ריאלית יותר לגבי לוח הזמנים הצפוי במקרה שלכם.</p>
+        </details>
+        <details class="faq-item reveal">
+          <summary>האם הפנייה כרוכה בהתחייבות?</summary>
+          <p>לא. שיחת הייעוץ הראשונית נועדה להבין את המצב שלכם ולהציג בפניכם את האפשרויות הרלוונטיות, ללא כל התחייבות מצדכם.</p>
+        </details>
       </div>
     </div>
   </section>
@@ -260,33 +444,6 @@
   </section>
 
   <!-- ══════════════════════════════════════════════════
-       FAQ
-  ══════════════════════════════════════════════════ -->
-  <section class="faq">
-    <div class="wrap">
-      <h2 class="faq__title reveal">שאלות נפוצות</h2>
-      <div class="faq__list">
-        <details class="faq-item reveal">
-          <summary>מהי הוצאה לפועל וכיצד מתמודדים איתה?</summary>
-          <p>הוצאה לפועל היא הרשות האחראית על גביית חובות בישראל. כשנפתח נגדכם תיק, קיימות מספר דרכי פעולה — ביניהן בקשה לצו תשלומים לפי יכולת ההחזר שלכם. בשיחת ייעוץ נבחן את התיק הספציפי שלכם ואת האפשרויות העומדות בפניכם.</p>
-        </details>
-        <details class="faq-item reveal">
-          <summary>מה ההבדל בין הסדר חוב לבין הליך חדלות פירעון?</summary>
-          <p>הסדר חוב הוא משא ומתן ישיר מול הנושים, ללא צורך בהליך משפטי מלא. הליך חדלות פירעון הוא הליך משפטי מובנה יותר, הפועל מול הממונה ובית המשפט, ושיכול להוביל בסופו — בהתאם לנסיבות האישיות — להפטר מהחוב.</p>
-        </details>
-        <details class="faq-item reveal">
-          <summary>כמה זמן אורך התהליך?</summary>
-          <p>משך הזמן תלוי במסלול שנבחר ובנסיבות האישיות של כל תיק. בשיחת הייעוץ הראשונית נוכל לתת לכם תמונה ריאלית יותר לגבי לוח הזמנים הצפוי במקרה שלכם.</p>
-        </details>
-        <details class="faq-item reveal">
-          <summary>האם הפנייה כרוכה בהתחייבות?</summary>
-          <p>לא. שיחת הייעוץ הראשונית נועדה להבין את המצב שלכם ולהציג בפניכם את האפשרויות הרלוונטיות, ללא כל התחייבות מצדכם.</p>
-        </details>
-      </div>
-    </div>
-  </section>
-
-  <!-- ══════════════════════════════════════════════════
        FOOTER
   ══════════════════════════════════════════════════ -->
   <footer class="site-footer">
@@ -319,11 +476,24 @@
         </div>
       </div>
 
-      <div class="footer-item">
-        <div class="footer-item__ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s7-6.5 7-11.5A7 7 0 0 0 5 9.5C5 14.5 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg></div>
+      <div class="footer-item footer-item--map">
+        <div class="footer-map-thumb-wrap">
+          <a
+            class="footer-map-thumb"
+            href="https://www.google.com/maps/search/?api=1&query=%D7%94%D7%92%D7%91%D7%99%D7%A9%206%2C%20%D7%9B%D7%A4%D7%A8%20%D7%A1%D7%91%D7%90"
+            target="_blank" rel="noopener" aria-label="פתחו את מיקום המשרד בגוגל מפות">
+            <img src="assets/images/office-building.jpg" alt="בניין המשרד — הגביש 6, כפר סבא" loading="lazy" />
+          </a>
+          <a
+            class="footer-map-thumb__waze"
+            href="https://waze.com/ul?q=%D7%94%D7%92%D7%91%D7%99%D7%A9%206%2C%20%D7%9B%D7%A4%D7%A8%20%D7%A1%D7%91%D7%90&navigate=yes"
+            target="_blank" rel="noopener" aria-label="נווטו למשרד בוויז">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a7 7 0 0 0-7 7c0 5.2 6 12 6.3 12.3a1 1 0 0 0 1.4 0C13 21 19 14.2 19 9a7 7 0 0 0-7-7z"/><circle cx="12" cy="9" r="2.5"/></svg>
+          </a>
+        </div>
         <div>
           <p class="footer-item__title">כתובת המשרד</p>
-          <p class="footer-item__sub">הגביש 6 פינת דרך המוביל 9, כפר סבא</p>
+          <a class="footer-item__sub" href="https://www.google.com/maps/search/?api=1&query=%D7%94%D7%92%D7%91%D7%99%D7%A9%206%2C%20%D7%9B%D7%A4%D7%A8%20%D7%A1%D7%91%D7%90" target="_blank" rel="noopener">הגביש 6 פינת דרך המוביל 9, כפר סבא</a>
         </div>
       </div>
     </div>
@@ -365,6 +535,17 @@
         <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
       </svg>
     </a>
+  </div>
+
+  <!-- Video lightbox — shared modal for testimonial videos -->
+  <div class="video-modal" id="videoModal" aria-hidden="true">
+    <div class="video-modal__backdrop" data-video-close></div>
+    <div class="video-modal__panel">
+      <button class="video-modal__close" type="button" data-video-close aria-label="סגור סרטון">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6L6 18M6 6l12 12"/></svg>
+      </button>
+      <video id="videoModalPlayer" controls playsinline controlsList="nodownload noremoteplayback"></video>
+    </div>
   </div>
 
   <script src="js/script.js"></script>
