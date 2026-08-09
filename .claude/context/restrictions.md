@@ -2,6 +2,7 @@
 
 This project is a legal services landing page for people dealing with debt, execution cases, insolvency and financial distress.
 
+
 Claude must follow these restrictions permanently while working on this project.
 
 ────────────────────────

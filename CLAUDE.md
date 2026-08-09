@@ -47,6 +47,43 @@ Avoid generic landing page sections.
 Avoid outdated legal website aesthetics.
 
 ────────────────────────
+VISUAL LANGUAGE
+────────────────────────
+
+Every new section must feel like a premium SaaS website rather than a traditional law firm website.
+
+Preferred references:
+
+Apple
+Stripe
+Linear
+Framer
+Raycast
+Pitch
+Notion
+
+Avoid:
+
+Bootstrap appearance
+Flat cards
+Heavy borders
+Generic gradients
+Large colored boxes
+Template layouts
+
+Always use:
+
+Visual hierarchy
+Soft shadows
+Glass layers where appropriate
+Large spacing
+Premium typography
+Depth
+Modern interactions
+Subtle motion
+Minimal UI
+
+────────────────────────
 DEVELOPMENT RULES
 ────────────────────────
 

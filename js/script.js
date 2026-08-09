@@ -14,6 +14,11 @@
     }
   });
 
+  // "Why us" cards drop in with a wider gap between each, so the eye follows them landing one by one
+  document.querySelectorAll('.why-item.reveal').forEach((el, i) => {
+    el.style.transitionDelay = `${i * 140}ms`;
+  });
+
   const revealEls = document.querySelectorAll('.reveal');
   if ('IntersectionObserver' in window && revealEls.length) {
     const io = new IntersectionObserver((entries) => {
@@ -270,5 +275,77 @@
       okPanel.hidden = false;
       okPanel.classList.add('is-visible');
     });
+  }
+
+  // Exit-intent popup — one gentle nudge before leaving, shown once per session
+  const exitModal = document.getElementById('exitModal');
+  if (exitModal) {
+    const exitForm = document.getElementById('exitForm');
+    const exitPhoneInput = document.getElementById('exitPhone');
+    const exitPhoneErr = document.getElementById('exitPhoneErr');
+    const exitOkPanel = document.getElementById('exitFormOk');
+    const mainOkPanel = document.getElementById('leadFormOk');
+
+    let exitShown = sessionStorage.getItem('exitPopupShown') === '1';
+
+    const openExitModal = () => {
+      if (exitShown) return;
+      if (mainOkPanel && mainOkPanel.classList.contains('is-visible')) return;
+      exitShown = true;
+      sessionStorage.setItem('exitPopupShown', '1');
+      exitModal.classList.add('is-open');
+      exitModal.setAttribute('aria-hidden', 'false');
+      document.body.classList.add('modal-open');
+      exitModal.querySelector('.exit-modal__close').focus();
+    };
+
+    const closeExitModal = () => {
+      exitModal.classList.remove('is-open');
+      exitModal.setAttribute('aria-hidden', 'true');
+      document.body.classList.remove('modal-open');
+    };
+
+    exitModal.querySelectorAll('[data-exit-close]').forEach((el) => {
+      el.addEventListener('click', closeExitModal);
+    });
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && exitModal.classList.contains('is-open')) closeExitModal();
+    });
+
+    // Desktop — cursor leaving toward the browser chrome at the top of the page
+    document.addEventListener('mouseout', (e) => {
+      if (!e.relatedTarget && e.clientY <= 0) openExitModal();
+    });
+
+    // Touch devices — reaching the footer without converting is the closest signal to "about to leave"
+    const footerEl = document.querySelector('.site-footer');
+    if (footerEl && 'IntersectionObserver' in window) {
+      const footerIo = new IntersectionObserver((entries) => {
+        if (entries[0].isIntersecting) openExitModal();
+      }, { threshold: 0.3 });
+      footerIo.observe(footerEl);
+    }
+
+    if (exitPhoneInput) {
+      exitPhoneInput.addEventListener('input', () => {
+        exitPhoneInput.value = exitPhoneInput.value.replace(/\D/g, '').slice(0, 10);
+      });
+    }
+
+    if (exitForm) {
+      exitForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+
+        const phoneValid = /^0\d{9}$/.test(exitPhoneInput.value);
+        exitPhoneErr.hidden = phoneValid;
+        exitPhoneInput.style.borderColor = phoneValid ? '' : '#D97757';
+        if (!phoneValid) { exitPhoneInput.focus(); return; }
+
+        // No backend wired up yet — replace with the real submit endpoint when available.
+        exitForm.querySelectorAll('.fi, button[type="submit"]').forEach((el) => (el.style.display = 'none'));
+        exitOkPanel.hidden = false;
+        exitOkPanel.classList.add('is-visible');
+      });
+    }
   }
 })();
