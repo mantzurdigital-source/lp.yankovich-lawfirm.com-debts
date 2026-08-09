@@ -229,6 +229,40 @@ h1, h2, h3 { color: var(--navy); font-weight: 800; }
 .header-contact:hover { transform: translateY(-1px); box-shadow: 0 10px 26px rgba(166, 130, 79, 0.4), inset 0 1px 0 rgba(255,255,255,0.28); }
 .header-contact:hover .btn__icon-wrap { background: rgba(255,255,255,0.28); }
 
+/* hamburger — hidden on desktop, shown once .site-nav collapses (≤1024px, see RESPONSIVE) */
+.nav-toggle {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  width: 40px;
+  height: 40px;
+  padding: 0;
+  border: none;
+  border-radius: 50%;
+  background: rgba(20,33,61,0.05);
+  cursor: pointer;
+  flex-shrink: 0;
+  transition: background 0.2s var(--ease);
+}
+.nav-toggle:hover { background: rgba(20,33,61,0.09); }
+.nav-toggle__bar {
+  display: block;
+  width: 18px;
+  height: 2px;
+  border-radius: 1px;
+  background: var(--navy);
+  transition: transform 0.3s var(--ease), opacity 0.3s var(--ease);
+}
+.nav-toggle[aria-expanded="true"] .nav-toggle__bar:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+.nav-toggle[aria-expanded="true"] .nav-toggle__bar:nth-child(2) { opacity: 0; }
+.nav-toggle[aria-expanded="true"] .nav-toggle__bar:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+/* dropdown panel mirroring the desktop nav links — closed by default,
+   only reachable/visible once the hamburger shows (≤1024px) */
+.mobile-nav { display: none; }
+
 /* ══════════════════════════════════════════════════════════════
    HERO
 ══════════════════════════════════════════════════════════════ */
@@ -460,10 +494,12 @@ h1, h2, h3 { color: var(--navy); font-weight: 800; }
 }
 @media (max-width: 640px) {
   .hero-scene { max-width: 280px; }
-  .hero-scene__quote { width: min(88%, 300px); padding: 24px 20px 18px; bottom: 6%; }
-  .hero-scene__quote-mark { font-size: 25px; }
-  .hero-scene__quote-text { font-size: 15px; }
-  .hero-scene__quote-sign { font-size: 20px; margin-top: 14px; }
+  .hero-scene__quote { width: min(66%, 210px); padding: 15px 15px 13px; bottom: 3%; }
+  .hero-scene__quote-head { margin-bottom: 8px; }
+  .hero-scene__quote-mark { font-size: 17px; }
+  .hero-scene__quote-rule { width: 16px; }
+  .hero-scene__quote-text { font-size: 11.5px; line-height: 1.4; }
+  .hero-scene__quote-sign { font-size: 14px; margin-top: 8px; }
 }
 
 /* ══════════════════════════════════════════════════════════════
@@ -1730,6 +1766,40 @@ body.a11y-underline a { text-decoration: underline !important; }
 ══════════════════════════════════════════════════════════════ */
 @media (max-width: 1024px) {
   .site-nav { display: none; }
+  .nav-toggle { display: flex; }
+  .mobile-nav {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: calc(100% + 10px);
+    left: 12px;
+    right: 12px;
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    pointer-events: none;
+    background: rgba(255,255,255,0.92);
+    backdrop-filter: blur(18px) saturate(160%);
+    -webkit-backdrop-filter: blur(18px) saturate(160%);
+    border-radius: 24px;
+    box-shadow: 0 24px 50px rgba(20,33,61,0.16), inset 0 1px 0 rgba(255,255,255,0.6);
+    padding: 8px;
+    transition: max-height 0.35s var(--ease), opacity 0.25s var(--ease);
+    z-index: var(--z-nav);
+  }
+  .mobile-nav.is-open { max-height: 420px; opacity: 1; pointer-events: auto; }
+  .mobile-nav__link {
+    padding: 14px 18px;
+    border-radius: 16px;
+    font-size: 15.5px;
+    font-weight: 600;
+    color: var(--navy-2);
+    text-align: center;
+    transition: background 0.2s var(--ease), color 0.2s var(--ease);
+  }
+  .mobile-nav__link:hover { background: rgba(166,130,79,0.08); color: var(--gold-d); }
+  .mobile-nav__link--cta { margin-top: 6px; background: var(--gold-d); color: var(--white); }
+  .mobile-nav__link--cta:hover { background: var(--gold); color: var(--white); }
   .hero__stage { grid-template-columns: 1fr; padding: 48px 32px 64px; gap: 40px; }
   .path-preview__grid { max-width: 100%; grid-template-columns: repeat(2, 1fr); }
   .recognition__grid { grid-template-columns: repeat(2, 1fr); }
@@ -1742,10 +1812,15 @@ body.a11y-underline a { text-decoration: underline !important; }
 
 @media (max-width: 640px) {
   .wrap { padding: 0 20px; }
-  .site-header { width: calc(100% - 24px); margin-top: 10px; top: 10px; padding: 10px 16px; }
-  .brand__role { display: none; }
-  .header-contact span { display: none; }
-  .header-contact { padding: 12px; }
+  .site-header { width: calc(100% - 24px); margin-top: 10px; top: 10px; padding: 10px 14px; gap: 10px; }
+  .brand__mark { height: 40px; }
+  .brand__name { font-size: 15.5px; }
+  .brand__role, .brand__sep { display: none; }
+  .header-contact { padding: 7px 14px 7px 7px; gap: 8px; }
+  .header-contact span { font-size: 13px; }
+  .header-contact .btn__icon-wrap { width: 26px; height: 26px; }
+  .header-contact svg { width: 13px; height: 13px; }
+  .hero-scene { order: 0; }
   .hero__stage { padding: 40px 20px 40px; gap: 32px; }
   .hero__cta-wrap { flex-direction: column; align-items: stretch; }
   .hero__cta-wrap .btn { width: 100%; }
@@ -1759,8 +1834,16 @@ body.a11y-underline a { text-decoration: underline !important; }
   .process__timeline::before { right: 17px; }
   .process__marker { width: 36px; height: 36px; font-size: 13px; }
   .process__step { gap: 16px; }
-  .path-preview__grid { grid-template-columns: 1fr; }
-  .path-card { max-width: 300px; margin: 0 auto; }
+  .path-preview__grid { grid-template-columns: 1fr 1fr; gap: 14px; margin-bottom: 32px; }
+  .path-card { padding: 6px; }
+  .path-card__inner { min-height: 168px; }
+  .path-card__cover, .path-card__back { padding: 16px 12px; gap: 8px; }
+  .path-card__ico { width: 38px; height: 38px; }
+  .path-card__ico svg { width: 18px; height: 18px; }
+  .path-card__title { font-size: 12.5px; }
+  .path-card__hint { font-size: 9.5px; padding: 4px 9px; }
+  .path-card__back-title { font-size: 12.5px; }
+  .path-card__back-desc { font-size: 11px; }
   .paths__cta { flex-direction: column; text-align: center; padding: 32px 24px; }
   .paths__cta-glow { right: 50%; transform: translate(50%, -50%); }
   .paths__cta-text { align-items: center; max-width: 100%; }

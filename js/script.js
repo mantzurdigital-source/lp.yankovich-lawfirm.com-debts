@@ -198,6 +198,31 @@
     fabs.forEach((f) => f.classList.add('is-visible'));
   }
 
+  // Mobile hamburger menu
+  const navToggle = document.querySelector('.nav-toggle');
+  const mobileNav = document.getElementById('mobileNav');
+  if (navToggle && mobileNav) {
+    const closeMobileNav = () => {
+      navToggle.setAttribute('aria-expanded', 'false');
+      mobileNav.classList.remove('is-open');
+    };
+    navToggle.addEventListener('click', (e) => {
+      e.stopPropagation();
+      const open = navToggle.getAttribute('aria-expanded') === 'true';
+      navToggle.setAttribute('aria-expanded', String(!open));
+      mobileNav.classList.toggle('is-open', !open);
+    });
+    mobileNav.querySelectorAll('a').forEach((link) => {
+      link.addEventListener('click', closeMobileNav);
+    });
+    document.addEventListener('click', (e) => {
+      if (!e.target.closest('.site-header')) closeMobileNav();
+    });
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && mobileNav.classList.contains('is-open')) closeMobileNav();
+    });
+  }
+
   // Accessibility panel
   const a11yToggle = document.getElementById('a11yToggle');
   const a11yPanel = document.getElementById('a11yPanel');
