@@ -1,15 +1,7 @@
 {
-  "cleanUrls": true,
+  "cleanUrls": false,
   "trailingSlash": false,
   "rewrites": [
-    {
-      "source": "/Debts/thank-you",
-      "destination": "/thank-you.html"
-    },
-    {
-      "source": "/thank-you",
-      "destination": "/thank-you.html"
-    },
     {
       "source": "/Debts",
       "destination": "/"
