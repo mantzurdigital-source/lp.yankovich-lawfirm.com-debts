@@ -295,10 +295,28 @@
         return;
       }
 
-      // No backend wired up yet — replace with the real submit endpoint when available.
-      form.querySelectorAll('.fi, button[type="submit"]').forEach((el) => (el.style.display = 'none'));
-      okPanel.hidden = false;
-      okPanel.classList.add('is-visible');
+      const submitBtn = form.querySelector('button[type="submit"]');
+      const submitErr = document.getElementById('lfSubmitErr');
+      submitBtn.disabled = true;
+      submitErr.hidden = true;
+
+      fetch('api/lead', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          name: document.getElementById('lfName').value,
+          phone: phoneInput.value,
+          message: document.getElementById('lfMsg').value,
+        }),
+      })
+        .then((res) => {
+          if (!res.ok) throw new Error('submit failed');
+          window.location.href = 'thank-you.html';
+        })
+        .catch(() => {
+          submitBtn.disabled = false;
+          submitErr.hidden = false;
+        });
     });
   }
 
@@ -366,10 +384,29 @@
         exitPhoneInput.style.borderColor = phoneValid ? '' : '#D97757';
         if (!phoneValid) { exitPhoneInput.focus(); return; }
 
-        // No backend wired up yet — replace with the real submit endpoint when available.
-        exitForm.querySelectorAll('.fi, button[type="submit"]').forEach((el) => (el.style.display = 'none'));
-        exitOkPanel.hidden = false;
-        exitOkPanel.classList.add('is-visible');
+        const exitSubmitBtn = exitForm.querySelector('button[type="submit"]');
+        const exitSubmitErr = document.getElementById('exitSubmitErr');
+        exitSubmitBtn.disabled = true;
+        exitSubmitErr.hidden = true;
+
+        fetch('api/lead', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            name: 'פנייה מהיציאה מהדף',
+            phone: exitPhoneInput.value,
+          }),
+        })
+          .then((res) => {
+            if (!res.ok) throw new Error('submit failed');
+            exitForm.querySelectorAll('.fi, button[type="submit"]').forEach((el) => (el.style.display = 'none'));
+            exitOkPanel.hidden = false;
+            exitOkPanel.classList.add('is-visible');
+          })
+          .catch(() => {
+            exitSubmitBtn.disabled = false;
+            exitSubmitErr.hidden = false;
+          });
       });
     }
   }
