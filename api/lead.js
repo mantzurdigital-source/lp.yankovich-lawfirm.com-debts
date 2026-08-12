@@ -46,10 +46,6 @@ module.exports = async (req, res) => {
     submitted_at: new Date().toISOString(),
   }
 
-  const svcKey = process.env.SUPABASE_SERVICE_ROLE_KEY || ''
-  console.log('[DIAG-TEMP] SUPABASE_URL:', process.env.SUPABASE_URL)
-  console.log('[DIAG-TEMP] SERVICE_ROLE_KEY len:', svcKey.length, 'first4:', svcKey.slice(0, 4), 'last4:', svcKey.slice(-4))
-
   const supabase = getSupabaseClient()
 
   const { data, error } = await supabase
