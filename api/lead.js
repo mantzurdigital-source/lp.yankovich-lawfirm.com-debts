@@ -1,6 +1,7 @@
 const { createClient } = require('@supabase/supabase-js')
 
 const LANDING_PAGE_URL = 'https://lp.yankovich-lawfirm.com/Debts'
+const MAKE_WEBHOOK_URL = process.env.MAKE_WEBHOOK_URL
 
 function getSupabaseClient() {
   return createClient(
@@ -12,6 +13,19 @@ function getSupabaseClient() {
 function clean(value) {
   const str = String(value || '').trim()
   return str || null
+}
+
+async function notifyMake(payload) {
+  if (!MAKE_WEBHOOK_URL) return
+  try {
+    await fetch(MAKE_WEBHOOK_URL, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(payload),
+    })
+  } catch (err) {
+    console.error('[lead] make webhook error:', err.message)
+  }
 }
 
 module.exports = async (req, res) => {
@@ -68,6 +82,18 @@ module.exports = async (req, res) => {
     console.error('[lead] insert error:', error.message)
     return res.status(500).json({ error: 'Failed to save lead' })
   }
+
+  await notifyMake({
+    lead_id:      data.id,
+    name,
+    phone,
+    email:        clean(body.email),
+    city:         clean(body.city),
+    message:      clean(body.message),
+    source:       'landing_page',
+    landing_page: LANDING_PAGE_URL,
+    submitted_at: customFields.submitted_at,
+  })
 
   console.log('[lead] inserted:', data.id)
   return res.status(201).json({ status: 'ok', id: data.id })
