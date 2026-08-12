@@ -1,0 +1,9 @@
+{
+  "name": "haim-yankovich-landing",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Static landing page for Adv. Haim Yankovich, with a Vercel serverless function for lead capture.",
+  "dependencies": {
+    "@supabase/supabase-js": "^2.39.0"
+  }
+}
