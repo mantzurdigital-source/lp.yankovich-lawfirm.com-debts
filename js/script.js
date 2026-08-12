@@ -331,9 +331,12 @@
     const mainOkPanel = document.getElementById('leadFormOk');
 
     let exitShown = sessionStorage.getItem('exitPopupShown') === '1';
+    const pageLoadTime = Date.now();
+    const MIN_DWELL_MS = 15000; // לפחות 15 שניות שהייה לפני שהפופאפ רשאי להיפתח
 
     const openExitModal = () => {
       if (exitShown) return;
+      if (Date.now() - pageLoadTime < MIN_DWELL_MS) return;
       if (mainOkPanel && mainOkPanel.classList.contains('is-visible')) return;
       exitShown = true;
       sessionStorage.setItem('exitPopupShown', '1');
