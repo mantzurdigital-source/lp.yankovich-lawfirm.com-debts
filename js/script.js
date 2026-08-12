@@ -311,6 +311,7 @@
       })
         .then((res) => {
           if (!res.ok) throw new Error('submit failed');
+          if (typeof fbq === 'function') fbq('track', 'Lead');
           window.location.href = 'thank-you.html';
         })
         .catch(() => {
@@ -399,6 +400,7 @@
         })
           .then((res) => {
             if (!res.ok) throw new Error('submit failed');
+            if (typeof fbq === 'function') fbq('track', 'Lead');
             exitForm.querySelectorAll('.fi, button[type="submit"]').forEach((el) => (el.style.display = 'none'));
             exitOkPanel.hidden = false;
             exitOkPanel.classList.add('is-visible');
