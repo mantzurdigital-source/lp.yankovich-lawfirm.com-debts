@@ -307,6 +307,7 @@
           name: document.getElementById('lfName').value,
           phone: phoneInput.value,
           message: document.getElementById('lfMsg').value,
+          lead_source: 'טופס בעמוד',
         }),
       })
         .then((res) => {
@@ -325,6 +326,8 @@
   const exitModal = document.getElementById('exitModal');
   if (exitModal) {
     const exitForm = document.getElementById('exitForm');
+    const exitNameInput = document.getElementById('exitName');
+    const exitNameErr = document.getElementById('exitNameErr');
     const exitPhoneInput = document.getElementById('exitPhone');
     const exitPhoneErr = document.getElementById('exitPhoneErr');
     const exitOkPanel = document.getElementById('exitFormOk');
@@ -383,9 +386,15 @@
       exitForm.addEventListener('submit', (e) => {
         e.preventDefault();
 
+        const nameValid = exitNameInput.value.trim().length > 0;
+        exitNameErr.hidden = nameValid;
+        exitNameInput.style.borderColor = nameValid ? '' : '#D97757';
+
         const phoneValid = /^0\d{9}$/.test(exitPhoneInput.value);
         exitPhoneErr.hidden = phoneValid;
         exitPhoneInput.style.borderColor = phoneValid ? '' : '#D97757';
+
+        if (!nameValid) { exitNameInput.focus(); return; }
         if (!phoneValid) { exitPhoneInput.focus(); return; }
 
         const exitSubmitBtn = exitForm.querySelector('button[type="submit"]');
@@ -397,8 +406,9 @@
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({
-            name: 'פנייה מהיציאה מהדף',
+            name: exitNameInput.value.trim(),
             phone: exitPhoneInput.value,
+            lead_source: 'פופאפ יציאה',
           }),
         })
           .then((res) => {

@@ -684,6 +684,11 @@
 
       <form class="exit-modal__form" id="exitForm" novalidate>
         <div class="fi">
+          <label for="exitName" class="sr-only">שם מלא</label>
+          <input type="text" id="exitName" name="name" placeholder="שם מלא" required />
+          <span class="fi-err" id="exitNameErr" hidden>יש להזין שם</span>
+        </div>
+        <div class="fi">
           <label for="exitPhone" class="sr-only">טלפון</label>
           <input type="tel" id="exitPhone" name="phone" placeholder="05XXXXXXXX" inputmode="numeric" maxlength="10" required />
           <span class="fi-err" id="exitPhoneErr" hidden>יש להזין מספר טלפון בן 10 ספרות</span>

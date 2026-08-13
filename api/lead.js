@@ -51,6 +51,7 @@ module.exports = async (req, res) => {
 
   const customFields = {
     landing_page: LANDING_PAGE_URL,
+    lead_source:  clean(body.lead_source),
     utm_source:   clean(body.utm_source),
     utm_medium:   clean(body.utm_medium),
     utm_campaign: clean(body.utm_campaign),
@@ -91,6 +92,7 @@ module.exports = async (req, res) => {
     city:         clean(body.city),
     message:      clean(body.message),
     source:       'landing_page',
+    lead_source:  clean(body.lead_source),
     landing_page: LANDING_PAGE_URL,
     submitted_at: customFields.submitted_at,
   })
