@@ -49,17 +49,7 @@ module.exports = async (req, res) => {
     return res.status(500).json({ error: 'Server misconfigured' })
   }
 
-  const customFields = {
-    landing_page: LANDING_PAGE_URL,
-    lead_source:  clean(body.lead_source),
-    utm_source:   clean(body.utm_source),
-    utm_medium:   clean(body.utm_medium),
-    utm_campaign: clean(body.utm_campaign),
-    utm_content:  clean(body.utm_content),
-    utm_term:     clean(body.utm_term),
-    fbclid:       clean(body.fbclid),
-    submitted_at: new Date().toISOString(),
-  }
+  const submittedAt = new Date().toISOString()
 
   const supabase = getSupabaseClient()
 
@@ -74,7 +64,15 @@ module.exports = async (req, res) => {
       notes:         clean(body.message),
       source:        'landing_page',
       status:        'new',
-      custom_fields: customFields,
+      submitted_at:  submittedAt,
+      landing_page:  LANDING_PAGE_URL,
+      lead_source:   clean(body.lead_source),
+      utm_source:    clean(body.utm_source),
+      utm_medium:    clean(body.utm_medium),
+      utm_campaign:  clean(body.utm_campaign),
+      utm_content:   clean(body.utm_content),
+      utm_term:      clean(body.utm_term),
+      custom_fields: { fbclid: clean(body.fbclid) },
     })
     .select('id')
     .single()
@@ -94,7 +92,7 @@ module.exports = async (req, res) => {
     source:       'landing_page',
     lead_source:  clean(body.lead_source),
     landing_page: LANDING_PAGE_URL,
-    submitted_at: customFields.submitted_at,
+    submitted_at: submittedAt,
   })
 
   console.log('[lead] inserted:', data.id)

@@ -272,6 +272,19 @@
     });
   }
 
+  // Capture UTM params from the landing URL once, reuse for every lead submission on this page
+  const utmParams = (() => {
+    const qs = new URLSearchParams(window.location.search);
+    const pick = (key) => qs.get(key) || undefined;
+    return {
+      utm_source:   pick('utm_source'),
+      utm_medium:   pick('utm_medium'),
+      utm_campaign: pick('utm_campaign'),
+      utm_content:  pick('utm_content'),
+      utm_term:     pick('utm_term'),
+    };
+  })();
+
   // Lead form
   const form = document.getElementById('leadForm');
   if (form) {
@@ -308,6 +321,7 @@
           phone: phoneInput.value,
           message: document.getElementById('lfMsg').value,
           lead_source: 'טופס בעמוד',
+          ...utmParams,
         }),
       })
         .then((res) => {
@@ -411,6 +425,7 @@
             name: exitNameInput.value.trim(),
             phone: exitPhoneInput.value,
             lead_source: 'פופאפ יציאה',
+            ...utmParams,
           }),
         })
           .then((res) => {
