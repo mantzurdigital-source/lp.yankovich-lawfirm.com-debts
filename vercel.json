@@ -11,6 +11,22 @@
       "destination": "/thank-you.html"
     },
     {
+      "source": "/Debts/privacy",
+      "destination": "/privacy.html"
+    },
+    {
+      "source": "/privacy",
+      "destination": "/privacy.html"
+    },
+    {
+      "source": "/Debts/accessibility",
+      "destination": "/accessibility.html"
+    },
+    {
+      "source": "/accessibility",
+      "destination": "/accessibility.html"
+    },
+    {
       "source": "/Debts",
       "destination": "/"
     },

@@ -2112,6 +2112,17 @@ body.a11y-underline a { text-decoration: underline !important; }
   background: var(--gold);
 }
 .legal__section strong { color: var(--navy); font-weight: 700; }
+.legal__section p a,
+.legal__section li a {
+  color: var(--navy);
+  font-weight: 600;
+  text-decoration: underline;
+  text-decoration-color: rgba(166,130,79,0.5);
+  text-underline-offset: 3px;
+  transition: color 0.15s var(--ease);
+}
+.legal__section p a:hover,
+.legal__section li a:hover { color: var(--gold-d); }
 
 .legal__contact {
   display: grid;
