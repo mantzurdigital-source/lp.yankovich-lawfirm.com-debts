@@ -1437,15 +1437,36 @@ body.modal-open { overflow: hidden; }
 
 .leadform__privacy {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: center;
   gap: 6px;
   margin-top: 16px;
   font-size: 12.5px;
-  color: var(--gray-400);
+  line-height: 1.6;
+  color: var(--gray-500);
   text-align: center;
 }
-.leadform__privacy svg { width: 13px; height: 13px; flex-shrink: 0; color: var(--gray-400); }
+.leadform__privacy svg { width: 13px; height: 13px; flex-shrink: 0; margin-top: 0.2em; color: var(--gray-400); }
+
+/* consent line under every lead form — links to the privacy policy */
+.form-consent {
+  margin-top: 14px;
+  font-size: 12px;
+  line-height: 1.6;
+  color: var(--gray-500);
+  text-align: center;
+}
+.leadform__privacy a,
+.form-consent a {
+  color: var(--navy);
+  font-weight: 600;
+  text-decoration: underline;
+  text-decoration-color: rgba(166,130,79,0.5);
+  text-underline-offset: 3px;
+  transition: color 0.15s var(--ease);
+}
+.leadform__privacy a:hover,
+.form-consent a:hover { color: var(--gold-d); }
 
 .leadform__ok {
   position: absolute;
